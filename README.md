@@ -1,3 +1,5 @@
 # Kube-Lab
 
-Lap setup of k8s nodes and provisioning 
+Lap setup and provisioning of k8s nodes.
+
+Vagrantfile is based on the Kubespray version.
