@@ -29,7 +29,7 @@ $subnet = "192.168.1"
 $ip_offset = 170
 $os = "coreos-stable"
 #$os = "centos"
-$bridge_nic = "en0: Wi-Fi (AirPort)"
+$bridge_nic = "enp2s0"
 $network_plugin = "flannel"
 # The first three nodes are etcd servers
 $etcd_instances = $num_instances
