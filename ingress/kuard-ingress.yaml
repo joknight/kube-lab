@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kuard
+  labels:
+    app: kuard
+spec:
+  backend:
+    serviceName: kuard
+    servicePort: 80
