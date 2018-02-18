@@ -6,7 +6,7 @@ metadata:
   name: app-ingress
 spec:
   rules:
-  - host: test.akomljen.com
+  - host: test.lab.knic.io
     http:
       paths:
       - backend:
