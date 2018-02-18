@@ -17,3 +17,7 @@ spec:
           serviceName: appsvc2
           servicePort: 80
         path: /app2
+      - backend:
+          serviceName: kuard
+          servicePort: 80
+        path: /kuard
