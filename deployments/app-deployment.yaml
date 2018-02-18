@@ -1,5 +1,5 @@
 apiVersion: extensions/v1beta1
-kind: Pod
+kind: Deployment
 metadata:
   name: app1
 spec:
