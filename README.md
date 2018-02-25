@@ -10,7 +10,8 @@ Vagrantfile is based on the Kubespray version.
 
 `$ kubectl create -f deployments/kuard-deployment.yaml`
 
-```$ kubectl get pods
+`$ kubectl get pods`
+```
 NAME                     READY     STATUS    RESTARTS   AGE
 app1-5d4d466cc7-8g58g    1/1       Running   0          7m
 app1-5d4d466cc7-r549b    1/1       Running   0          7m
@@ -24,7 +25,8 @@ kuard-5dbb87cd56-scjlb   1/1       Running   0          7m
 
 `$ kubectl create -f services/kuard-service.yaml`
 
-```$ kubectl get svc
+`$ kubectl get svc`
+```
 NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 appsvc1      ClusterIP   10.233.14.60    <none>        80/TCP           7m
 appsvc2      ClusterIP   10.233.50.77    <none>        80/TCP           7m
@@ -34,7 +36,8 @@ kubernetes   ClusterIP   10.233.0.1      <none>        443/TCP          54m
 
 `$ kubectl create namespace ingress`
 
-```$ kubectl get namespace
+`$ kubectl get namespace`
+```
 NAME          STATUS    AGE
 default       Active    55m
 ingress       Active    6s
@@ -44,7 +47,8 @@ kube-system   Active    55m
 
 `$ kubectl create -f deployments/default-backend-deployment.yaml -n=ingress`
 
-```$ kubectl get pods -n ingress
+`$ kubectl get pods -n ingress`
+```
 NAME                               READY     STATUS    RESTARTS   AGE
 default-backend-5469b58488-9mdkn   1/1       Running   0          39s
 default-backend-5469b58488-kz55q   1/1       Running   0          39s
@@ -52,7 +56,8 @@ default-backend-5469b58488-kz55q   1/1       Running   0          39s
 
 `$ kubectl create -f services/default-backend-service.yaml -n=ingress`
 
-```$ kubectl get svc -n ingress
+`$ kubectl get svc -n ingress`
+```
 NAME              TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
 default-backend   ClusterIP   10.233.12.33   <none>        80/TCP    1m
 ```
@@ -63,7 +68,8 @@ default-backend   ClusterIP   10.233.12.33   <none>        80/TCP    1m
 
 `$ kubectl create -f deployments/nginx-ingress-controller-deployment.yaml -n=ingress`
 
-```$ kubectl get pods -n ingress
+`$ kubectl get pods -n ingress`
+```
 NAME                                        READY     STATUS    RESTARTS   AGE
 default-backend-5469b58488-9mdkn            1/1       Running   0          6m
 default-backend-5469b58488-kz55q            1/1       Running   0          6m
@@ -74,7 +80,8 @@ nginx-ingress-controller-6fc7d7fd85-rf4t6   1/1       Running   0          1m
 
 `$ kubectl create -f ingress/nginx-ingress.yaml -n=ingress`
 
-```$ kubectl get ingress -n ingress
+`$ kubectl get ingress -n ingress`
+```
 NAME            HOSTS              ADDRESS   PORTS     AGE
 nginx-ingress   test.lab.knic.io             80        11s
 ```
@@ -82,7 +89,8 @@ nginx-ingress   test.lab.knic.io             80        11s
 `$ kubectl create -f ingress/app-ingress.yaml`
 `$ kubectl create -f ingress/kuard-ingress.yaml`
 
-```$ kubectl get ingress
+`$ kubectl get ingress`
+```
 NAME            HOSTS               ADDRESS   PORTS     AGE
 app-ingress     app.lab.knic.io               80        15s
 kuard-ingress   kuard.lab.knic.io             80        2s
@@ -91,14 +99,17 @@ kuard-ingress   kuard.lab.knic.io             80        2s
 
 `$ kubectl create -f services/nginx-ingress-controller-service.yaml -n=ingress`
 
-```$ kubectl get svc -n ingress
+`$ kubectl get svc -n ingress`
+```
 NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                        AGE
 default-backend   ClusterIP   10.233.12.33    <none>        80/TCP                         9m
 nginx-ingress     NodePort    10.233.33.191   <none>        80:30000/TCP,18080:32000/TCP   8s
 ```
 
 
-```$ kubectl get all
+`$ kubectl get all`
+
+```
 NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 deploy/app1    2         2         2            2           21m
 deploy/app2    2         2         2            2           21m
