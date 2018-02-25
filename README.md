@@ -87,6 +87,7 @@ nginx-ingress   test.lab.knic.io             80        11s
 ```
 
 `$ kubectl create -f ingress/app-ingress.yaml`
+
 `$ kubectl create -f ingress/kuard-ingress.yaml`
 
 `$ kubectl get ingress`
