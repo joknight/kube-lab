@@ -1,10 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: kuard
-  labels:
-    app: kuard
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: kuard-ingress
 spec:
-  backend:
-    serviceName: kuard
-    servicePort: 80
+  rules:
+  - host: kuard.lab.knic.io
+    http:
+      paths:
+      - backend:
+          serviceName: kuard
+          servicePort: 8080
+          #        path: /
