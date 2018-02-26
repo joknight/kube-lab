@@ -30,7 +30,7 @@ kuard-5dbb87cd56-scjlb   1/1       Running   0          7m
 NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 appsvc1      ClusterIP   10.233.14.60    <none>        80/TCP           7m
 appsvc2      ClusterIP   10.233.50.77    <none>        80/TCP           7m
-kuard        NodePort    10.233.49.152   <none>        8080:32711/TCP   7m
+kuard        ClusterIP   10.233.49.152   <none>        8080/TCP         7m
 kubernetes   ClusterIP   10.233.0.1      <none>        443/TCP          54m
 ```
 
@@ -142,6 +142,6 @@ po/kuard-5dbb87cd56-scjlb   1/1       Running   0          21m
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 svc/appsvc1      ClusterIP   10.233.14.60    <none>        80/TCP           20m
 svc/appsvc2      ClusterIP   10.233.50.77    <none>        80/TCP           20m
-svc/kuard        NodePort    10.233.49.152   <none>        8080:32711/TCP   20m
+svc/kuard        ClusterIP   10.233.49.152   <none>        8080/TCP         20m
 svc/kubernetes   ClusterIP   10.233.0.1      <none>        443/TCP          1h
 ```
