@@ -6,9 +6,9 @@ Vagrantfile is based on the Kubespray version.
 
 ---
 
-`kubectl create -f deployments/app-deployment.yaml`
+`kubectl apply -f deployments/app-deployment.yaml`
 
-`kubectl create -f deployments/kuard-deployment.yaml`
+`kubectl apply -f deployments/kuard-deployment.yaml`
 
 `kubectl get pods`
 ```
@@ -21,9 +21,9 @@ kuard-5dbb87cd56-hnsd6   1/1       Running   0          7m
 kuard-5dbb87cd56-scjlb   1/1       Running   0          7m
 ```
 
-`kubectl create -f services/app-service.yaml`
+`kubectl apply -f services/app-service.yaml`
 
-`kubectl create -f services/kuard-service.yaml`
+`kubectl apply -f services/kuard-service.yaml`
 
 `kubectl get svc`
 ```
@@ -45,7 +45,7 @@ kube-public   Active    55m
 kube-system   Active    55m
 ```
 
-`kubectl create -f deployments/default-backend-deployment.yaml -n=ingress`
+`kubectl apply -f deployments/default-backend-deployment.yaml -n=ingress`
 
 `kubectl get pods -n ingress`
 ```
@@ -54,7 +54,7 @@ default-backend-5469b58488-9mdkn   1/1       Running   0          39s
 default-backend-5469b58488-kz55q   1/1       Running   0          39s
 ```
 
-`kubectl create -f services/default-backend-service.yaml -n=ingress`
+`kubectl apply -f services/default-backend-service.yaml -n=ingress`
 
 `kubectl get svc -n ingress`
 ```
@@ -62,11 +62,11 @@ NAME              TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
 default-backend   ClusterIP   10.233.12.33   <none>        80/TCP    1m
 ```
 
-`kubectl create -f ingress/nginx-ingress-controller-config-map.yaml -n ingress`
+`kubectl apply -f ingress/nginx-ingress-controller-config-map.yaml -n ingress`
 
-`kubectl create -f rbac/nginx-ingress-controller-roles.yaml -n=ingress`
+`kubectl apply -f rbac/nginx-ingress-controller-roles.yaml -n=ingress`
 
-`kubectl create -f deployments/nginx-ingress-controller-deployment.yaml -n=ingress`
+`kubectl apply -f deployments/nginx-ingress-controller-deployment.yaml -n=ingress`
 
 `kubectl get pods -n ingress`
 ```
@@ -78,7 +78,7 @@ nginx-ingress-controller-6fc7d7fd85-fj6l4   1/1       Running   0          1m
 nginx-ingress-controller-6fc7d7fd85-rf4t6   1/1       Running   0          1m
 ```
 
-`kubectl create -f ingress/nginx-ingress.yaml -n=ingress`
+`kubectl apply -f ingress/nginx-ingress.yaml -n=ingress`
 
 `kubectl get ingress -n ingress`
 ```
@@ -86,9 +86,9 @@ NAME            HOSTS              ADDRESS   PORTS     AGE
 nginx-ingress   test.lab.knic.io             80        11s
 ```
 
-`kubectl create -f ingress/app-ingress.yaml`
+`kubectl apply -f ingress/app-ingress.yaml`
 
-`kubectl create -f ingress/kuard-ingress.yaml`
+`kubectl apply -f ingress/kuard-ingress.yaml`
 
 `kubectl get ingress`
 ```
@@ -98,7 +98,7 @@ kuard-ingress   kuard.lab.knic.io             80        2s
 ```
 
 
-`kubectl create -f services/nginx-ingress-controller-service.yaml -n=ingress`
+`kubectl apply -f services/nginx-ingress-controller-service.yaml -n=ingress`
 
 `kubectl get svc -n ingress`
 ```
