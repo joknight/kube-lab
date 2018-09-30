@@ -28,7 +28,7 @@ $forwarded_ports = {}
 $subnet = "192.168.1"
 $ip_offset = 170
 $os = "coreos-stable"
-#$os = "centos"
+# $os = "centos"
 $bridge_nic = "enp2s0"
 $network_plugin = "flannel"
 # The first three nodes are etcd servers

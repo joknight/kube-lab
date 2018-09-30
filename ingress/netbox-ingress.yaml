@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: netbox-ingress
+spec:
+  rules:
+  - host: netbox.lab.knic.io
+    http:
+      paths:
+      - backend:
+          serviceName: nginix
+          servicePort: 80
+          #path: /
